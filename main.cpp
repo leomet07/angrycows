@@ -25,7 +25,7 @@ string getString(){
 }
 
 
-long long getTotalKilled(set<long long> locations, long long start, long long jumpSize, long long killed){
+long long getTotalKilled(set<long long> locations, long long start, long long jumpSize, long long killed_num){
     // we can modify locations here because it is pass by VALUE
     // cout << "Current cow: " << start << " Jump size: " << jumpSize << " Total cows: " << locations.size() << endl;
 
@@ -54,14 +54,22 @@ long long getTotalKilled(set<long long> locations, long long start, long long ju
         
     }
 
+    // Vector print
+    // cout << "Start vector print" << endl;
+    // for (long long i = 0; i < toCheck.size(); i++){
+    //     long long bale = toCheck[i];
+    //     cout <<  bale << endl;
+    // }
+    // cout << "End vector print" << endl;
+
     for (long long i = 0; i < toCheck.size(); i++){
         long long bale = toCheck[i];
 
-        killed++;
-        killed = getTotalKilled(locations, bale, jumpSize + 1, killed);
+        killed_num++;
+        killed_num = getTotalKilled(locations, bale, jumpSize + 1, killed_num);
     }
     
-    return killed;
+    return killed_num;
 }
 
 int main() {
