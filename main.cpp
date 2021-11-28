@@ -35,18 +35,18 @@ set<long long> getTotalKilled(set<long long> locations, long long start, long lo
 
     for (long long i = (jumpSize * -1 ); i < jumpSize + 1 ; i++){
         if (i != 0){
-            long long checkDistCow = start + i;
+            long long checkDistBale = start + i;
             // cout << "Check Dist cow" << checkDistCow << endl;
             // Check if such a cow exists
 
-            if (locations.find(checkDistCow) != locations.end()){
+            if (locations.find(checkDistBale) != locations.end()){
                 // cout << "Cow exists, going through: " << checkDistCow << " The existing cow: " << start << endl;
-                // Cow found
-                locations.erase(start); // remove the current cow as it has already been checked
-                locations.erase(checkDistCow); // remove the current cow as it has already been checked
+                // Bale  found
+                locations.erase(start); // remove the current bale as it has already been checked
+                locations.erase(checkDistBale); // remove the current bale as it has already been checked
                 //erase first
 
-                toCheck.push_back(checkDistCow);
+                toCheck.push_back(checkDistBale);
             }
         }
         
