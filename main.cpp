@@ -2,10 +2,11 @@
 #include <set>
 #include <iterator>
 #include <vector>
-
+#include <bits/stdc++.h>
 
 using namespace std;
  
+
 int getInt(){
     int i;
     cin >> i;
@@ -46,21 +47,10 @@ set<long long> getTotalKilled(set<long long> locations, long long start, long lo
                 //erase first
 
                 toCheck.push_back(checkDistCow);
-            }else{
-                // cout << "Cow does not exist" << endl;
             }
-            // hay_before.push_back(locationsjumpSize)
         }
         
     }
-
-    // Vector print
-    // cout << "Start vector print" << endl;
-    // for (long long i = 0; i < toCheck.size(); i++){
-    //     long long bale = toCheck[i];
-    //     cout <<  bale << endl;
-    // }
-    // cout << "End vector print" << endl;
 
     for (long long i = 0; i < toCheck.size(); i++){
         long long bale = toCheck[i];
@@ -73,6 +63,9 @@ set<long long> getTotalKilled(set<long long> locations, long long start, long lo
 }
 
 int main() {
+    ifstream cin("angry.in");
+    ofstream cout("angry.out");
+
     ios::sync_with_stdio(0);
 	cin.tie(0);
 
