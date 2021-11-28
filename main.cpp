@@ -93,7 +93,7 @@ int main() {
         // long long c = 5;
 
         // go down rabbit hole
-        cout << "ACTUAL NEW COW: " << c << endl;
+        // cout << "ACTUAL NEW COW: " << c << endl;
         set<long long> killed;
         killed.insert(c);
         set<long long> t  = getTotalKilled(locations, c , 1, killed );
@@ -102,10 +102,10 @@ int main() {
             maxkilled = t.size();
         }
 
-        cout << "Total: " << t.size() << endl;
-        cout << "Max: " << maxkilled << endl;
+        // cout << "Total: " << t.size() << endl;
+        // cout << "Max: " << maxkilled << endl;
     }
-
+    cout << maxkilled << endl;
      
     return 0;
 
