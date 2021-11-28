@@ -41,12 +41,13 @@ int main() {
         cows[i] = a;
     }
     sort(cows.begin(), cows.end());
-    cout << "\n" << endl;
+    // cout << "\n" << endl;
+    int m = 0;
     for (int i = 0; i < ins; i++){
         int l = cows[i];
         // cout << "i:" <<  i <<  " L: " << l << endl;
         int r = 2;
-        int k = 1;
+        int k = 1;  
         int c = i + 1;
         // try to leap forward
         while (c < ins){
@@ -78,9 +79,14 @@ int main() {
             r++;
         }
 
-        cout << "K: " << k << endl;
+        if (k > m){
+            m = k;
+        }
+        // cout << "K: " << k << endl;
 
     }
+
+    cout << m << endl;
     
     
      
