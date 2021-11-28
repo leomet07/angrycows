@@ -40,13 +40,13 @@ int main() {
         while (c < ins){
             // cout << "C: " << c << endl;
             int v = cows[c];
-            cout << "V: " << v << " " << v - l << " " << r << endl;
+            // cout << "V: " << v << " " << v - l << " " << r << endl;
             if (v - l <= r){
-                cout << "Yes: " << endl;
+                // cout << "Yes: " << endl;
                 k++;
                 
                 if (v - l == r){
-                    cout<< "Exact" << endl;
+                    // cout<< "Exact" << endl;
                     r++;
                 }
             }
