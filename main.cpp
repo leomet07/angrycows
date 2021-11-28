@@ -65,10 +65,14 @@ int main() {
             if (l -v <= r){
                 // cout << "Yes: " << endl;
                 k++;
-
+                if (l -v == r){ // if exact, add one more dist
+                    r++;
+                }
             }
             s--;
-            r++;
+
+            l = v;
+            
         }
 
         if (k > m){
