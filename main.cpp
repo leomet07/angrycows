@@ -13,22 +13,9 @@ int getInt(){
     return i;
 }
 
-long long getLongLong(){
-    long long l;
-    cin >> l;
-    return l;
-}
-
-string getString(){
-    string s;
-    cin >> s;
-    return s;
-}
-
-
 int main() {
-    // ifstream cin("angry.in");
-    // ofstream cout("angry.out");
+    ifstream cin("angry.in");
+    ofstream cout("angry.out");
 
     ios::sync_with_stdio(0);
 	cin.tie(0);
@@ -37,7 +24,7 @@ int main() {
     vector<int> cows(ins);
 
     for (int i = 0; i < ins; i++){
-        int a = getLongLong();
+        int a = getInt();
         cows[i] = a;
     }
     sort(cows.begin(), cows.end());
@@ -46,27 +33,32 @@ int main() {
     for (int i = 0; i < ins; i++){
         int l = cows[i];
         // cout << "i:" <<  i <<  " L: " << l << endl;
-        int r = 2;
+        int r = 1;
         int k = 1;  
         int c = i + 1;
         // try to leap forward
         while (c < ins){
             // cout << "C: " << c << endl;
             int v = cows[c];
-            // cout << "V: " << v << " " << v - l << endl;
+            cout << "V: " << v << " " << v - l << " " << r << endl;
             if (v - l <= r){
-                // cout << "Yes: " << endl;
+                cout << "Yes: " << endl;
                 k++;
-
+                
+                if (v - l == r){
+                    cout<< "Exact" << endl;
+                    r++;
+                }
             }
             c++;
-            r++;
-
+            
+            l = v;
         }
 
         int s = i -1;
-        r = 2;
-        while (s > 0){
+        r = 1;
+        l = cows[i];
+        while (s >= 0){
             // cout << "C: " << c << endl;
             int v = cows[s];
             // cout << "S: " << s << " " << l - v << endl;
@@ -88,8 +80,6 @@ int main() {
 
     cout << m << endl;
     
-    
-     
     return 0;
 
 }
